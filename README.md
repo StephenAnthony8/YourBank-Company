@@ -1,1 +1,1 @@
-# YourBank-Company
+# YourBank Banking Company (Svelte Project)

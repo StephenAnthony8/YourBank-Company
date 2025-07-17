@@ -1,0 +1,303 @@
+/* Variables */
+:root {
+  /* Colours */
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-dark-green: #22251b;
+  --clr-aside-dark: #1a1a1a;
+
+  /* Green shades */
+  --clr-green-60: #caff33;
+  --clr-green-65: #d1ff4c;
+  --clr-green-70: #d8ff66;
+  --clr-green-80: #e5ff99;
+  --clr-green-90: #f2ffcc;
+  --clr-green-95: #f8ffe5;
+  --clr-green-97: #fbfff0;
+  --clr-green-99: #fefffa;
+
+  /* White shades */
+  --clr-white-90: #e4e4e7;
+  --clr-white-95: #f1f1f3;
+  --clr-white-97: #f7f7f8;
+  --clr-white-99: #fcfcfd;
+
+  /* Grey shades */
+  --clr-grey-10: #191919;
+  --clr-grey-11: #1c1c1c;
+  --clr-grey-15: #262626;
+  --clr-grey-20: #333333;
+  --clr-grey-30: #4c4c4d;
+  --clr-grey-35: #59595a;
+  --clr-grey-40: #656567;
+  --clr-grey-60: #98989a;
+  --clr-grey-70: #b3b3b3;
+  --clr-grey-75: #bfbfbf;
+
+  /* Font weight */
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  /* Line height */
+  --line-height-1: 1;
+  --line-height-2: 1.25;
+  --line-height-3: 1.5;
+  --line-height-4: 1.75;
+  --line-height-5: 2;
+
+  /* Font size */
+  --fs-48: 3rem;
+  --fs-38: 2.375rem;
+  --fs-28: 1.75rem;
+  --fs-18: 1.125rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+  --fs-12: 0.75rem;
+  --fs-9: 0.5625rem;
+
+  /* major dimensions */
+  --container-width-padding: 162px;
+
+  @media (max-width: 1440px) {
+    --container-width-padding: 80px;
+  }
+  @media (max-width: 1050px) {
+    --container-width-padding: 40px;
+  }
+
+  @media (max-width: 600px) {
+    --container-width-padding: 16px;
+  }
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-400);
+  color: var(--clr-white);
+  background-color: var(--clr-grey-10);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Containers */
+.container {
+  max-width: var(--container-max-width, 1280px);
+  margin-inline: auto;
+}
+
+.subsection-container {
+  --gap: 120px;
+}
+
+.rounded-container {
+  background-color: var(--bg-color, var(--clr-green-60));
+  
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-round-container-desktop, 20px);
+  border-radius: var(--border-round-container-radius-desktop, 20px);
+  @media (max-width: 1440px) {
+    padding: var(--padding-round-container-tablet, 15px);
+    border-radius: var(--border-round-container-radius-tablet, 15px);
+  }
+  @media (max-width: 1050px) {
+    padding: var(--padding-round-container-mobile, 10px);
+    border-radius: var(--border-round-container-radius-mobile, 10px);
+  }
+}
+/* Utility classes */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  border-color: var(--separator-color, var(--clr-grey-15));
+}
+.separator-line {
+  max-height: 100%;
+  width: 1px;
+  background-color: var(--separator-line-color, var(--clr-grey-70));
+  align-self: stretch;
+}
+
+.icon-sizing {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+
+  @media (max-width: 1050px) {
+    width: var(--icon-size-mobile, 20px);
+    height: var(--icon-size-mobile, 20px);
+  }
+  /* flex: 1; */
+}
+.icon-container {
+  padding: 9px;
+  width: calc(var(--icon-size, 28px) + 8.67px);
+  height: calc(var(--icon-size, 28px) + 8.67px);
+
+  @media (max-width: 1050px) {
+    width: calc(var(--icon-size-mobile, 20px) + 8.67px);
+    height: calc(var(--icon-size-mobile, 20px) + 8.67px);
+  }
+}
+.circle {
+  border-radius: 50%;
+}
+.zero-padding-margin {
+  padding: 0;
+  margin: 0;
+}
+
+.green-60 {
+  background-color: var(--clr-green-60);
+}
+/* Typography */
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.green-text {
+  color: var(--clr-green-60);
+}
+
+/* Carousel Effect */
+.carousel {
+  white-space: nowrap;
+  overflow: auto;
+}
+.carousel-options {
+  padding: auto;
+  animation: 10s carousels linear infinite;
+}
+@keyframes carousels {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }   
+}
+
+/* Screen sizes */
+@media (max-width: 1440px) {
+}
+@media (max-width: 1050px) {
+}
+@media (max-width: 600px) {
+}
